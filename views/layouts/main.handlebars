@@ -15,9 +15,9 @@
       <nav>
         <!-- Conditionally render login or logout links -->
         {{#if logged_in}}
-        <h1 class="mx-10">Profile</h1> |
-        <h1 class="mx-10">Listings</h1> |
-        <h1 class="mx-10">Messages</h1> |
+        <h1 class="mx-10"><a href="/profile">Profile</a></h1> |
+        <h1 class="mx-10"><a href="">Listings</a></h1> |
+        <h1 class="mx-10"><a href="">Messages</a></h1> |
         <h1 class="mx-10"> <button class="no-button" id="logout">Logout</button></h1>
         {{else}}
         <a href="/login">Login</a>
