@@ -1,12 +1,9 @@
-<div class="comments">
-    {{#each this}}
-    <section class="comment">
-        <div class="">
-            {{user.username}} on {{format_date created_at}}
-        </div>
-        <div class="text">
-            {{comment_text}}
-        </div>
-    </section>
-    {{/each}}
-</div>
+<article class="post">
+    <div class="title">
+        <span><a href="">{{title}}</a></span>
+        <span style="">Posted by {{user.username}} on {{format_date created_at}}</span><br>
+    </div>
+    <div class="content">
+        <p>{{post_text}}</p>
+    </div>
+</article>
