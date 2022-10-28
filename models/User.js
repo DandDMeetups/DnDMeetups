@@ -41,7 +41,7 @@ User.init(
       //Define the data type
       type: DataTypes.STRING,
       //Require the data to be entered
-      allowNull: false,
+      allowNull: true,
       validate: {
         notEmpty: true,
       }

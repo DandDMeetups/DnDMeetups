@@ -2,7 +2,7 @@
 //Express connection
 const router = require('express').Router();
 //Comment model
-const { Comment } = require('');
+const { Comment } = require('../../models');
 //Authorization helper
 const withAuth = require('../../utils/auth');
 
