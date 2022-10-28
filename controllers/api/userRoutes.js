@@ -133,7 +133,49 @@ router.post('/logout', (req, res) => {
 });
 
 //PUT update an existing user
+router.put('/:id', withAuth, (req, res) => {
+  //Update method
+  //If req.body has exact key/value pairs to match the model, you can just use 'req.body' instead of calling out each property, allowing for updating only key/value pairs that are passed through
+  User.update(req.body, {
+    //Since there is a hook to hash only the password, the option is noted here
+    individualHooks: true,
+    //Use the id as the parameter for the individual user to be updated
+    where: {
+      id: req.params.id
+    }
+  })
+  .then(dbUserData => {
+    if(!dbUserData[0]) {
+      res.status(404).json({ message: 'No user found with this id'});
+      return;
+    }
+    res.json(dbUserData);
+  })
+  .catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+  });
+})
 
 //DELETE delete an existing user
+router.delete('/:id', withAuth, (req, res) => {
+  //Destroy method
+  User.destroy({
+    where: {
+      id: req.params.id
+    }
+  })
+  .then(dbUserData => {
+    if(!dbUserData) {
+      res.status(404).json({ message: 'No user found with this id' });
+      return;
+    }
+    res.json(dbUserData);
+  })
+  .catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+  });
+});
 
 module.exports = router;
