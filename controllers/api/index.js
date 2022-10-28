@@ -18,4 +18,5 @@ router.use('/projects', projectRoutes);
 router.use('/posts', postRoutes);
 router.use('/comments', commentRoutes);
 
+//Export the router
 module.exports = router;
