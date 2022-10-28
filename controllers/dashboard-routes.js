@@ -93,7 +93,7 @@ router.get('/edit/:id', withAuth, (req, res) => {
 });
 
 //Route to edit the logged in user
-router.get('/edituser', withAuth, (req, res) => {
+router.get('/edit', withAuth, (req, res) => {
     //Access the User model and run the fineOne() method to get a single user based on the parameters
     User.findOne({
         //When the data is sent back, exclude the password property
