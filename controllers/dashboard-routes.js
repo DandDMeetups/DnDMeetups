@@ -84,7 +84,7 @@ router.get('/edit/:id', withAuth, (req, res) => {
         }
         //Serialize data before passing to template
         const post = dbPostData.get({ plain: true });
-        res.render('edit-post,' { post, logged_in: true });
+        res.render('edit-post', { post, logged_in: true });
     })
     .catch(err => {
         console.log(err);

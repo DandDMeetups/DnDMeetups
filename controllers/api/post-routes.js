@@ -87,7 +87,7 @@ router.get('/:id', (req, res) => {
         res.json(dbPostData);
       })
       .catch(err => {
-        // if a server error occured, return an error
+        // if a server error occurred, return an error
         console.log(err);
         res.status(500).json(err);
       });
