@@ -5,10 +5,10 @@ const newFormHandler = async (event) => {
   const needed_funding = document.querySelector('#listing-title').value.trim();
   const description = document.querySelector('#listing-desc').value.trim();
 
-  if (name && needed_funding && description) {
+  if (name && category && description) {
     const response = await fetch(`/controllers/api/listingRoutes.js`, {
       method: 'POST',
-      body: JSON.stringify({ name, title, description }),
+      body: JSON.stringify({ name, category, description }),
       headers: {
         'Content-Type': 'application/json',
       },
