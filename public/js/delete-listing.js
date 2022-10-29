@@ -1,13 +1,13 @@
-//Function to delete a post
-async function deleteFormHandler(event) {
+//Function to delete a listing
+async function deleteListingFormHandler(event) {
     event.preventDefault();
 
-    //Get the post id from the url
+    //Get the listing id from the url
     const id = window.location.toString().split('/')[
         window.location.toString().split('/').length -1
     ];
-    //Delete the post with an async function
-    const response = await fetch(`/controllers/api/post/${id}`, {
+    //Delete the listing with an async function
+    const response = await fetch(`/controllers/api/listing/${id}`, {
         method: 'DELETE'
     });
     //If the delete action is successful, redirect to the dashboard page
@@ -19,4 +19,4 @@ async function deleteFormHandler(event) {
     }
 }
 
-document.querySelector('.delete-post-btn').addEventListener('click', deleteFormHandler);
+document.querySelector('.delete-listing-btn').addEventListener('click', deleteFormHandler);
