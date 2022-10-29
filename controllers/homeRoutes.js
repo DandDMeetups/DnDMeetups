@@ -41,7 +41,7 @@ router.get('/listing/:id', async (req, res) => {
     const listing = listingData.get({ plain: true });
 
     res.render('listing', {
-      ...Listing,
+      ...listing,
       logged_in: req.session.logged_in
     });
   } catch (err) {

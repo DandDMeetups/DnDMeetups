@@ -1,38 +1,7 @@
 const router = require('express').Router();
-const { Listing, User } = require('../../models');
+const { Listing } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-//GET all listings
-router.get('/', (req, res) => {
-  Listing.findAll({
-    //Query configuration
-    //From the listing table, include list id, name, category, and text
-    attributes: [
-      'name',
-      'category',
-      'description',
-      'date_created',
-      'user_id'
-    ],
-    //From the User table, include the listing creator name
-    include: [
-      {
-        model: User,
-        attributes: ['username']
-      }
-    ]
-  })
-  //Return the listings
-  .then(dbListingData => res.json(dbListingData))
-  //If there was a server error, return the error
-  .catch(err => {
-    console.log(err);
-    res.status(500).json(err);
-  });
-  });
-
-
-//POST create a new listing
 router.post('/', withAuth, async (req, res) => {
   try {
     const newListing = await Listing.create({
@@ -46,8 +15,6 @@ router.post('/', withAuth, async (req, res) => {
   }
 });
 
-
-//Delete a listing
 router.delete('/:id', withAuth, async (req, res) => {
   try {
     const listingData = await Listing.destroy({
@@ -68,5 +35,4 @@ router.delete('/:id', withAuth, async (req, res) => {
   }
 });
 
-//Export the router
 module.exports = router;
