@@ -10,12 +10,12 @@
 
     <form class="form new-listing-form">
       <div class="form-group">
-        <label for="listing-name">Listing Name:</label>
+        <label for="listing_name">Listing name:</label>
         <input class="form-input" type="text" id="listing-name" name="listing-name" />
       </div>
       <div class="form-group">
-        <label for="listing-title">Listing Title:</label>
-        <input class="form-input" type="number" id="listing-title" name="listing-title" />
+        <label for="listing-category">Category:</label>
+        <input class="form-input" type="number" id="listing-category" name="listing-category" />
       </div>
       <div class="form-group">
         <label for="listing-desc">Description:</label>
@@ -31,7 +31,7 @@
   <div class="col-md-6 listing-list">
     <h3>Current Listings:</h3>
 
-    {{#each listings as |listing|}}
+    {{#each listing as |listing|}}
     <div class="row mb-2">
       <div class="col-md-8">
         <h4><a href="/listing/{{listing.id}}">{{listing.name}}</a></h4>

@@ -1,12 +1,7 @@
-//Dependencies
-//Router and database
 const router = require('express').Router();
-//Models
 const { Listing, User } = require('../models');
-//Authorization middleware
 const withAuth = require('../utils/auth');
 
-//Listing
 router.get('/', async (req, res) => {
   try {
     // Get all listings and JOIN with user data
@@ -46,7 +41,7 @@ router.get('/listing/:id', async (req, res) => {
     const listing = listingData.get({ plain: true });
 
     res.render('listing', {
-      ...listing,
+      ...Listing,
       logged_in: req.session.logged_in
     });
   } catch (err) {
@@ -84,5 +79,4 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
-//Export the router
 module.exports = router;
