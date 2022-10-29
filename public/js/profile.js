@@ -8,14 +8,14 @@ const newFormHandler = async (event) => {
   if (name && category && description) {
     const response = await fetch(`/controllers/api/listingRoutes.js`, {
       method: 'POST',
-      body: JSON.stringify({ name, category, description }),
+      body: JSON.stringify({ name, category, description}),
       headers: {
         'Content-Type': 'application/json',
       },
     });
 
     if (response.ok) {
-      document.location.replace('/profile');
+      document.location.replace('./profile.js');
     } else {
       alert('Failed to listing');
     }

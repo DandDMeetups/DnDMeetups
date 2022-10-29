@@ -8,10 +8,11 @@ router.get('/', (req, res) => {
     //Query configuration
     //From the listing table, include list id, name, category, and text
     attributes: [
-      'id',
       'name',
       'category',
-      'listing_text',
+      'description',
+      'date_created',
+      'user_id'
     ],
     //From the User table, include the listing creator name
     include: [
@@ -39,10 +40,9 @@ router.get('/:id', (req, res) => {
     },
     //Query configuration, as with the get all listings route
       attributes: [
-        'id',
         'name',
         'category',
-        'listing_text',
+        'description',
       ],
         include: [
           {
@@ -54,18 +54,12 @@ router.get('/:id', (req, res) => {
   //Return the listings
   .then(dbListingData => {
     //If no listing by that id exists, return an error
-    if(!dbListingData) {
+    if (!dbListingData) {
       res.status(404).json({ message: 'No listing found with this id' });
       return;
     }
     res.json(dbListingData);
-  )}
-  .catch(err => {
-    //If a server error occurred, return an error
-    console.log(err);
-    res.status(500).json(err);
-  });
-});
+    
 
 //POST create a new listing
 router.post('/', withAuth, async (req, res) => {
@@ -80,28 +74,7 @@ router.post('/', withAuth, async (req, res) => {
     res.status(400).json(err);
   }
 });
-
-//PUT update a listing
-router.put('/:id', withAuth, (req,res) => {
-  Listing.update(req.body,
-    {
-      where: {
-        id: req.params.id
-      }
-    }
-)
-.then(dbListingData => {
-  if(!dbListingData) {
-    res.status(404).json({ message: 'No listing found with this id' });
-    return;
-  }
-  res.json(dbListingData);
-})
-.catch(err => {
-  console.log(err);
-  res.status(500).json(err)
 });
-)};
 
 //Delete a listing
 router.delete('/:id', withAuth, async (req, res) => {
@@ -122,6 +95,7 @@ router.delete('/:id', withAuth, async (req, res) => {
   } catch (err) {
     res.status(500).json(err);
   }
+});
 });
 
 //Export the router
