@@ -1,0 +1,34 @@
+<article>
+    <a href="./homepage.handlebars">Back to homepage</a>
+    <h2>Edit Listing</h2>
+    <form class="edit-listing-form">
+        <div>
+            <input name="listing-name" type="text" value="{{listing.name}}"/>
+        </div>
+        <div>
+            <textarea name="listing-text">{{listing.listing_text}}</textarea>
+        </div>
+        <div>
+            Post by you on {{format_date}}
+            |
+            <a href="./listing/{{listing.id}}">{{listing.listing.length}}</a>
+        </div>
+        <button type="submit">Save Listing</button>
+        <button type="button">Delete Listing</button>
+    </form>
+</article>
+
+<form class="listing-form">
+    <div>
+        <textarea name="listing-text"></textarea>
+    </div>
+    <div>
+        <button type="submit">Add Listing</button>
+    </div>
+</form>
+
+{{>listing listing-text}}
+
+<!-- Scripts -->
+<script src="/public/js/edit-listing.js"></script>
+<script src="/public/js/profile.js"></script>
