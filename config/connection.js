@@ -1,4 +1,7 @@
+//Dependencies
+//Sequelize constructor
 const Sequelize = require('sequelize');
+//dotenv for local environmental variables for username and password
 require('dotenv').config();
 
 let sequelize;

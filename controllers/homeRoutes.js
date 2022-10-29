@@ -1,5 +1,9 @@
+//Dependencies
+//Router and database
 const router = require('express').Router();
+//Models
 const { Project, User } = require('../models');
+//Authorization middleware
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
@@ -79,4 +83,5 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
+//Export the router
 module.exports = router;
