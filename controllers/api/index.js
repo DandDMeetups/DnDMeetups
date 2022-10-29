@@ -8,13 +8,13 @@ const userRoutes = require('./userRoutes');
 //Post routes
 const postRoutes = require('./post-routes');
 //Project routes
-const projectRoutes = require('./projectRoutes');
+const listingRoutes = require('./ListingRoutes');
 //Comment routes
 const commentRoutes = require('./comment-routes');
 
 //Define route path for the API to use
 router.use('/users', userRoutes);
-router.use('/projects', projectRoutes);
+router.use('/listing', listingRoutes);
 router.use('/posts', postRoutes);
 router.use('/comments', commentRoutes);
 
