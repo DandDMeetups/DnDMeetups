@@ -10,12 +10,12 @@
 
     <form class="form new-listing-form">
       <div class="form-group">
-        <label for="listing_name">Listing name:</label>
+        <label for="listing-name">Listing name:</label>
         <input class="form-input" type="text" id="listing-name" name="listing-name" />
       </div>
       <div class="form-group">
         <label for="listing-category">Category:</label>
-        <input class="form-input" type="number" id="listing-category" name="listing-category" />
+        <input class="form-input" type="text" id="listing-category" name="listing-category" />
       </div>
       <div class="form-group">
         <label for="listing-desc">Description:</label>
@@ -31,10 +31,10 @@
   <div class="col-md-6 listing-list">
     <h3>Current Listings:</h3>
 
-    {{#each listing as |listing|}}
+    {{#each listings as |listing|}}
     <div class="row mb-2">
       <div class="col-md-8">
-        <h4><a href="/listing/{{listing.id}}">{{listing.name}}</a></h4>
+        <h4><a href="/listing">{{listing.name}}</a></h4>
       </div>
       <div class="col-md-4">
         <button class="btn btn-sm btn-danger" data-id="{{listing.id}}">DELETE</button>
@@ -45,4 +45,4 @@
   {{/if}}
 </div>
 
-<script src="./js/profile.js"></script>
+<script src="../public/js/profile.js"></script>

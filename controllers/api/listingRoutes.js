@@ -29,37 +29,8 @@ router.get('/', (req, res) => {
     console.log(err);
     res.status(500).json(err);
   });
-});
+  });
 
-//GET a single listing by id
-router.get('/:id', (req, res) => {
-  Listing.findOne({
-    where: {
-      //Specify the listing id parameter in the query
-      id: req.params.id
-    },
-    //Query configuration, as with the get all listings route
-      attributes: [
-        'name',
-        'category',
-        'description',
-      ],
-        include: [
-          {
-            model: User,
-            attributes: ['username']
-          }
-        ]
-  })
-  //Return the listings
-  .then(dbListingData => {
-    //If no listing by that id exists, return an error
-    if (!dbListingData) {
-      res.status(404).json({ message: 'No listing found with this id' });
-      return;
-    }
-    res.json(dbListingData);
-    
 
 //POST create a new listing
 router.post('/', withAuth, async (req, res) => {
@@ -74,7 +45,7 @@ router.post('/', withAuth, async (req, res) => {
     res.status(400).json(err);
   }
 });
-});
+
 
 //Delete a listing
 router.delete('/:id', withAuth, async (req, res) => {
@@ -95,7 +66,6 @@ router.delete('/:id', withAuth, async (req, res) => {
   } catch (err) {
     res.status(500).json(err);
   }
-});
 });
 
 //Export the router
