@@ -36,16 +36,6 @@ User.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    //Define a username column
-    username: {
-      //Define the data type
-      type: DataTypes.STRING,
-      //Require the data to be entered
-      allowNull: true,
-      validate: {
-        notEmpty: true,
-      }
-    },
     //Define an email column
     email: {
       //Define the datatype

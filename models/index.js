@@ -1,7 +1,7 @@
 //User model
 const User = require('./User');
-//Project model
-const Project = require('./Project');
+//Listing model
+const Listing = require('./Listing');
 //Post model
 const Post = require('./Post');
 //Comment model
@@ -46,16 +46,16 @@ Post.hasMany(Comment, {
   hooks: true
 });
 
-//User-Project relationship
-User.hasMany(Project, {
+//User-Listing relationship
+User.hasMany(Listing, {
   foreignKey: 'user_id',
   onDelete: 'CASCADE'
 });
 
-//Project-User relationship
-Project.belongsTo(User, {
+//Listing-User relationship
+Listing.belongsTo(User, {
   foreignKey: 'user_id'
 });
 
 //Export the modules
-module.exports = { User, Project, Post, Comment };
+module.exports = { User, Listing, Post, Comment };
