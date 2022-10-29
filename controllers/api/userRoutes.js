@@ -2,7 +2,7 @@
 //Express connection
 const router = require('express').Router();
 //User, Post models
-const { User, Post, Comment } = require('../../models');
+const { User, Post, Comment, Listing } = require('../../models');
 //Express session
 const session = require('express-session');
 //Authorization helper
@@ -47,6 +47,14 @@ router.get('/:id', (req, res) => {
         attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
         include: {
           model: Post,
+          attributes: ['title']
+        }
+      },
+      {
+        model: Listing,
+        attributes: ['id', 'listing_text', 'listing_id', 'user_id', 'created_at'],
+        include: {
+          model: Listing,
           attributes: ['title']
         }
       }
@@ -96,7 +104,7 @@ router.post('/login', async (req, res) => {
       return;
     }
 
-    const validPassword = await userData.checkPassword(req.body.password);
+    const validPassword = userData.checkPassword(req.body.password);
 
     if (!validPassword) {
       res

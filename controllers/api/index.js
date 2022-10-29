@@ -7,8 +7,8 @@ const router = require('express').Router();
 const userRoutes = require('./userRoutes');
 //Post routes
 const postRoutes = require('./post-routes');
-//Project routes
-const listingRoutes = require('./ListingRoutes');
+//Listing routes
+const listingRoutes = require('./listingRoutes');
 //Comment routes
 const commentRoutes = require('./comment-routes');
 
