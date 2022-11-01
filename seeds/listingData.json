@@ -1,0 +1,21 @@
+[
+    {
+      "id": 1,
+      "name": "Need Players",
+      "category": "DM Seeking Players",
+      "description": "I am an experienced DM looking for 2 more players for my D&D 5e campaign. It doesn't matter how experienced you are. We will be starting at level 1."
+    },
+    {
+      "id": 2,
+      "name": "Looking for a DM!!!",
+      "category": "Player Seeking DM",
+      "description": "I am new to D&D and I want to join a group :)"
+    },
+    {
+      "id": 3,
+      "name": "I need friends",
+      "category": "Player Seeking Group",
+      "description": "I really want some friends, pls let me join :("
+    }
+  ]
+  
