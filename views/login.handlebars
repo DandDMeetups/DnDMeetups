@@ -1,39 +1,45 @@
-<div class="row">
-  <div class="col-md-6">
-    <h2>Login</h2>
+<div class="w-screen flex flex-row flex-wrap">
+  <div class="w-2/5 m-16 border-slate-500 border-2 border-dashed">
+    <h2 class="text-center">Login Form</h2>
 
-    <form class="form login-form">
-      <div class="form-group">
+    <form class="form login-form m-16">
+      <div class="form-group border-2 border-slate-500 m-2">
         <label for="email-login">Email:</label>
-        <input class="form-input" type="text" id="email-login" />
+        <input class="form-input w-fit" type="text" id="email-login" />
       </div>
-      <div class="form-group">
+      <div class="form-group border-2 border-slate-500 m-2">
         <label for="password-login">Password:</label>
-        <input class="form-input" type="password" id="password-login" />
+        <input class="form-input w-fit" type="password" id="password-login" />
       </div>
-      <div class="form-group">
-        <button class="btn btn-primary" type="submit">Login</button>
+      <div class="form-group text-center my-8">
+        <button
+          class="border-red-500 border-2 border-black rounded bg-red-500 text-white w-1/2 login-button"
+          type="submit"
+        >Login</button>
       </div>
     </form>
   </div>
-  <div class="col-md-6">
-    <h2>Signup</h2>
+  <div class="w-2/5 m-16 border-slate-500 border-2 border-dashed">
+    <h2 class="text-center">Signup Form</h2>
 
-    <form class="form signup-form">
-      <div class="form-group">
+    <form class="form signup-form m-16">
+      <div class="form-group border-2 border-slate-500 m-2">
         <label for="name-signup">Name:</label>
         <input class="form-input" type="text" id="name-signup" />
       </div>
-      <div class="form-group">
+      <div class="form-group border-2 border-slate-500 m-2">
         <label for="email-signup">Email:</label>
         <input class="form-input" type="text" id="email-signup" />
       </div>
-      <div class="form-group">
+      <div class="form-group border-2 border-slate-500 m-2">
         <label for="password-signup">Password:</label>
         <input class="form-input" type="password" id="password-signup" />
       </div>
-      <div class="form-group">
-        <button class="btn btn-primary" type="submit">Signup</button>
+      <div class="form-group text-center my-8">
+        <button
+          class="border-red-500 border-2 border-black rounded bg-red-500 text-white w-1/2 signup-button"
+          type="submit"
+        >Signup</button>
       </div>
     </form>
   </div>
