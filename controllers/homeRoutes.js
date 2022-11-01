@@ -1,15 +1,11 @@
-//Dependencies
-//Router and database
 const router = require('express').Router();
-//Models
-const { Project, User } = require('../models');
-//Authorization middleware
+const { Listing, User } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
   try {
-    // Get all projects and JOIN with user data
-    const projectData = await Project.findAll({
+    // Get all listings and JOIN with user data
+    const listingData = await Listing.findAll({
       include: [
         {
           model: User,
@@ -19,11 +15,11 @@ router.get('/', async (req, res) => {
     });
 
     // Serialize data so the template can read it
-    const projects = projectData.map((project) => project.get({ plain: true }));
+    const listings = listingData.map((listing) => listing.get({ plain: true }));
 
     // Pass serialized data and session flag into template
     res.render('homepage', { 
-      projects, 
+      listings, 
       logged_in: req.session.logged_in 
     });
   } catch (err) {
@@ -31,9 +27,9 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.get('/project/:id', async (req, res) => {
+router.get('/listing/:id', async (req, res) => {
   try {
-    const projectData = await Project.findByPk(req.params.id, {
+    const listingData = await Listing.findByPk(req.params.id, {
       include: [
         {
           model: User,
@@ -42,10 +38,10 @@ router.get('/project/:id', async (req, res) => {
       ],
     });
 
-    const project = projectData.get({ plain: true });
+    const listing = listingData.get({ plain: true });
 
-    res.render('project', {
-      ...project,
+    res.render('listing', {
+      ...listing,
       logged_in: req.session.logged_in
     });
   } catch (err) {
@@ -59,7 +55,7 @@ router.get('/profile', withAuth, async (req, res) => {
     // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
-      include: [{ model: Project }],
+      include: [{ model: Listing }],
     });
 
     const user = userData.get({ plain: true });
@@ -83,5 +79,4 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
-//Export the router
 module.exports = router;
