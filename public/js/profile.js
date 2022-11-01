@@ -45,3 +45,4 @@ document
 document
   .querySelector('.listing-list')
   .addEventListener('click', delButtonHandler);
+  

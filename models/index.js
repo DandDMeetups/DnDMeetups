@@ -11,4 +11,3 @@ Listing.belongsTo(User, {
 });
 
 module.exports = { User, Listing };
-
