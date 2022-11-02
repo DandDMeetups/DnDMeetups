@@ -1,8 +1,18 @@
-<div class="text-center">
+{{!-- <div class="text-center">
   <h2>{{name}}</h2>
   <p>{{{category}}}</p>
   <p>{{description}}</p>
   <p>Created by {{user.name}} on {{format_date date_created}}</p>
     <button class="btn btn-primary">Listing Button</button>
   </p>
-</div>
+</div> --}}
+
+<div class="w-1/4 h-96 border-2 border-black rounded m-8"><div
+        class="h-1/5 bg-red-500 text-center align-middle"
+      ><p>{{name}}</p></div><div
+        class="h-1/5 bg-black bg-opacity-90 text-white text-center"
+      ><p>{{category}}</p></div><div
+        class="h-2/5 bg-black bg-opacity-90 text-white text-center"
+      ><p>{{description}}</p></div><div
+        class="h-1/5 bg-red-500 flex flex-row place-content-center"
+      ><p>Created by {{user.name}} on {{format_date date_created}}</p></div></div>

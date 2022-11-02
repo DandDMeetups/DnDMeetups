@@ -9,7 +9,7 @@
         class="h-2/5 bg-black bg-opacity-90 text-white text-center"
       ><a href="./listing/{{listing.description}}"{{listing.description}}</a></a></div><div
         class="h-1/5 bg-red-500 flex flex-row place-content-center"
-      ></div></div>
+      ><p>Created by {{user.name}} on {{format_date date_created}}</p></div></div>
   {{/each}}
 </div>
 </div>

@@ -21,13 +21,17 @@
       </div>
       <div class="form-group border-2 border-slate-500 m-2">
         <label for="listing-category"></label>
-        <input
-          placeholder="Category"
+        <select placeholder="Category"
           class="form-input w-full"
           type="text"
           id="listing-category"
-          name="listing-category"
-        />
+          name="listing-category">
+            <option value="DM seeking group">DM Seeking Group</option>
+            <option value="Group seeking DM">Group Seeking DM</option>
+            <option value="Group seeking players">Group Seeking Player(s)</option>
+            <option value="Players seeking group">Player(s) Seeking Group</option>
+        </select>
+          
       </div>
       <div class="form-group border-2 border-slate-500 m-2">
         <label for="listing-desc"></label>
@@ -56,7 +60,7 @@
           <div class="flex">
             <h4
               class="flex flex-row justify-between m-2 border-2 border-slate-500 w-full"
-            ><a href="/listing">{{listing.name}}</a><button
+            ><a href= "/listing/{{listing.id}}">{{listing.name}}</a><button
                 class="border-2 border-black rounded bg-red-500 text-white w-1/5 login-button listing-list"
                 data-id="{{listing.id}}"
               >DELETE</button></h4>
