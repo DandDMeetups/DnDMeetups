@@ -1,17 +1,20 @@
 # DnDMeetups
 
 ## Description
-Meet with people to play DnD
+
+DnD Meetups is an application designed for Dungeons and Dragons players to arrange meetings and form lasting friendships!
 
 ## Contributions
-GitHub: bobefett-qwert12, nookworth, prohea
 
-## Resources
+GitHub: bobefett-qwert12 (Ryan P), nookworth (Chris M), prohea (Hope Z)
 
 ## Technologies Used
+
 Node.js, Express.js, Tailwind CSS, MySQL
 
 ## Deployed Project
 
+[DnD Meetups Live]()
+
 ## Screenshot
-![DnDMeetups]()
+![DnDMeetups](./config/image1.png)
