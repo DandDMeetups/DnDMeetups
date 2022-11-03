@@ -14,7 +14,7 @@ Node.js, Express.js, Tailwind CSS, MySQL
 
 ## Deployed Project
 
-[DnD Meetups Live]()
+[DnD Meetups Live](https://frozen-meadow-34344.herokuapp.com/)
 
 ## Screenshot
 ![DnDMeetups](./config/image1.png)
